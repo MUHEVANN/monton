@@ -1,13 +1,14 @@
+import { Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
-export default function TopBar() {
+export default function TopBar({ name }) {
     const [open, setOpen] = useState(false);
     const dropdownTarget = useRef();
 
     const triggerDropdown = () => {
         if (open) {
-            dropdownTarget.current.classNameList.remove("hidden");
+            dropdownTarget.current.classList.remove("hidden");
         } else {
-            dropdownTarget.current.classNameList.add("hidden");
+            dropdownTarget.current.classList.add("hidden");
         }
         setOpen(!open);
     };
@@ -23,7 +24,7 @@ export default function TopBar() {
             />
             <div className="flex items-center gap-4">
                 <span className="text-black text-sm font-medium">
-                    Welcome, Granola Sky
+                    Welcome, {name}
                 </span>
                 {/* <!-- user avatar -->  */}
                 <div className="collapsible-dropdown flex flex-col gap-2 relative">
@@ -55,12 +56,13 @@ export default function TopBar() {
                         >
                             Settings
                         </a>
-                        <a
-                            href="sign_in.html"
+                        <Link
+                            href={route("logout")}
+                            method="post"
                             className="transition-all hover:bg-sky-100 p-4"
                         >
                             Sign Out
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

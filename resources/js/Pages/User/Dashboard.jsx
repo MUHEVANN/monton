@@ -3,7 +3,7 @@ import MovieCard from "@/Components/MovieCard";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/react";
 import Flickity from "react-flickity-component";
-export default function Dashboard({ auth }) {
+export default function Dashboard({ auth, featureMovies, movies }) {
     const flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -29,15 +29,15 @@ export default function Dashboard({ auth }) {
                     className="gap-[30px] __scroll-selector"
                     options={flickityOptions}
                 >
-                    {[1, 2, 3, 4].map((i) => {
+                    {featureMovies.map((featureMovie) => {
                         return (
                             <Featured
-                                key={i}
-                                name={`The Batman In Love ${i}`}
-                                thumbnail="https://picsum.photos/id/1/300/300"
-                                category="Action"
-                                slug="the-batman-in-love"
-                                rating={i + 1}
+                                key={featureMovie.id}
+                                name={featureMovie.name}
+                                thumbnail={featureMovie.thumbnail}
+                                category={featureMovie.category}
+                                slug={featureMovie.slug}
+                                rating={featureMovie.rating}
                             />
                         );
                     })}
@@ -51,14 +51,14 @@ export default function Dashboard({ auth }) {
                     className="__scroll-selector"
                     options={flickityOptions}
                 >
-                    {[1, 2, 3, 4, 5, 6].map((i) => {
+                    {movies.map((movies) => {
                         return (
                             <MovieCard
-                                key={i}
-                                name={`The Batman In Love ${i}`}
-                                thumbnail="https://picsum.photos/id/1/300/300"
-                                category="Action"
-                                slug="the-batman-in-love"
+                                key={movies.id}
+                                name={movies.name}
+                                thumbnail={movies.thumbnail}
+                                category={movies.category}
+                                slug={movies.slug}
                             />
                         );
                     })}

@@ -58,7 +58,10 @@ export default function Register() {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <Link className="w-full">
+                                <Link
+                                    className="w-full"
+                                    href={route("prototype.dashboard")}
+                                >
                                     <Button
                                         variant="primary"
                                         className="font-semibold"

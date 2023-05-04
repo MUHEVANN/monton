@@ -27,6 +27,25 @@ Route::get('/', function () {
     ]);
 });
 
+Route::redirect('/','/prototype/login');
+Route::prefix("prototype")->group(function () {
+    route::get("/login", function(){
+        return Inertia::render('Prototype/Login');
+    })->name("prototype.login");
+    route::get("/register", function(){
+        return Inertia::render('Prototype/Register');
+    })->name("prototype.register");
+    route::get("/dashboard", function(){
+        return Inertia::render('Prototype/Dashboard');
+    })->name("prototype.dashboard");
+    route::get("/subscription", function(){
+        return Inertia::render('Prototype/Subscription');
+    })->name("prototype.subscription");
+    route::get("/movie/{slug}", function(){
+        return Inertia::render('Prototype/Movie/Show');
+    })->name("prototype.show");
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

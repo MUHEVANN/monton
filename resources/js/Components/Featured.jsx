@@ -1,5 +1,7 @@
 // import PropTypes from "prop-types";
 
+import { Link } from "@inertiajs/react";
+
 // Featured.PropTypes = {
 //     slug: PropTypes.string.isRequired,
 //     name: PropTypes.string.isRequired,
@@ -41,7 +43,10 @@ rounded-br-[28px] flex justify-between items-center px-7 h-[130px]"
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link
+                href={route("prototype.show", slug)}
+                className="inset-0 absolute z-50"
+            ></Link>
         </div>
     );
 }

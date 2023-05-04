@@ -1,5 +1,7 @@
 // import PropTypes from "prop-types";
 
+import { Link } from "@inertiajs/react";
+
 // MovieCard.PropTypes = {
 //     slug: PropTypes.string.isRequired,
 //     name: PropTypes.string.isRequired,
@@ -30,7 +32,10 @@ export default function MovieCard({ slug, name, category, thumbnail }) {
                     alt=""
                 />
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link
+                href={route("prototype.show", slug)}
+                className="inset-0 absolute z-50"
+            ></Link>
         </div>
     );
 }

@@ -9,11 +9,19 @@
 //         "white-outline",
 //     ]),
 // };
-export default function Button({ className, variant, children, ...props }) {
+export default function Button({
+    processing,
+    className,
+    variant,
+    children,
+    ...props
+}) {
     return (
         <button
             {...props}
-            className={`rounded-2xl btn-${variant} py-[13px] text-center w-full`}
+            className={`rounded-2xl btn-${variant} py-[13px] text-center w-full ${
+                processing && "opacity-30"
+            }`}
         >
             <span className={`text-base ${className}`}>{children}</span>
         </button>

@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-Featured.PropTypes = {
-    slug: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    rating: PropTypes.number,
-};
+// Featured.PropTypes = {
+//     slug: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     category: PropTypes.string.isRequired,
+//     thumbnail: PropTypes.string.isRequired,
+//     rating: PropTypes.number,
+// };
 export default function Featured({ slug, thumbnail, rating, category, name }) {
     return (
         <div className="absolute overflow-hidden group mr-[30px]">

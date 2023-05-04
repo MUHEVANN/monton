@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-MovieCard.PropTypes = {
-    slug: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-};
+// MovieCard.PropTypes = {
+//     slug: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     category: PropTypes.string.isRequired,
+//     thumbnail: PropTypes.string.isRequired,
+// };
 export default function MovieCard({ slug, name, category, thumbnail }) {
     return (
         <div className="absolute group overflow-hidden mr-[30px]">

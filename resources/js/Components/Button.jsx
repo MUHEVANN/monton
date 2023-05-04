@@ -1,14 +1,14 @@
-import PropTypes from "prop-types";
-Button.PropTypes = {
-    type: PropTypes.oneOf(["button", "submit", "reset"]),
-    className: PropTypes.string,
-    variant: PropTypes.oneOf([
-        "primary",
-        "danger",
-        "light-outline",
-        "white-outline",
-    ]),
-};
+// import PropTypes from "prop-types";
+// Button.PropTypes = {
+//     type: PropTypes.oneOf(["button", "submit", "reset"]),
+//     className: PropTypes.string,
+//     variant: PropTypes.oneOf([
+//         "primary",
+//         "danger",
+//         "light-outline",
+//         "white-outline",
+//     ]),
+// };
 export default function Button({ className, variant, children, ...props }) {
     return (
         <button

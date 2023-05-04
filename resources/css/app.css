@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.flex::before,
+.flex::after {
+    display: none !important;
+}
+@layer components {
+    [type="text"],
+    [type="email"],
+    [type="url"],
+    [type="password"],
+    [type="number"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="search"],
+    [type="tel"],
+    [type="time"],
+    [type="week"],
+    [multiple],
+    textarea,
+    select {
+        border-color: transparent;
+    }
+}
+
+/* btn */
+.btn-primary {
+    @apply bg-alerange text-white;
+}
+
+.btn-warning {
+    @apply bg-yellow-500 text-white;
+}
+.btn-danger {
+    @apply bg-red-500 text-white;
+}
+.btn-light-outline {
+    @apply text-white border border-white;
+}
+.btn-white-outline {
+    @apply text-black border border-[#f1f1f1];
+}
